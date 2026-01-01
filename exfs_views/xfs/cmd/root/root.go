@@ -3,6 +3,7 @@ package root
 import (
 	"github.com/spf13/cobra"
 
+	initcmd "github.com/bharxhav/exfs/cmd/init"
 	"github.com/bharxhav/exfs/cmd/version"
 	"github.com/bharxhav/exfs/internal/buildinfo"
 )
@@ -18,6 +19,7 @@ var Cmd = &cobra.Command{
 }
 
 func init() {
+	Cmd.AddCommand(initcmd.Cmd)
 	Cmd.AddCommand(version.Cmd)
 	registerGlobalFlags()
 }
