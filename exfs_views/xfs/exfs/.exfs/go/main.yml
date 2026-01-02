@@ -1,0 +1,21 @@
+command_intent:
+  type: exfs.go.comments
+
+imports:
+  type: exfs.go.imports
+
+command_name:
+  type: exfs.go.var
+  count: 1
+
+command_short_description:
+  type: exfs.go.var
+  count: 1
+
+command_long_description:
+  type: exfs.go.var
+  count: 1
+
+command:
+  type: exfs.go.functions
+  count: 1
