@@ -61,7 +61,30 @@ $defs:
   # ---------------------------------------------------------------------------
   terminal:
     oneOf:
+      # Core languages (productions/)
       - $ref: "./languages/productions/go.yml#/$defs/terminals"
+      - $ref: "./languages/productions/python.yml#/$defs/terminals"
+      - $ref: "./languages/productions/js.yml#/$defs/terminals"
+      - $ref: "./languages/productions/ts.yml#/$defs/terminals"
+      - $ref: "./languages/productions/html.yml#/$defs/terminals"
+      - $ref: "./languages/productions/css.yml#/$defs/terminals"
+      - $ref: "./languages/productions/swift.yml#/$defs/terminals"
+      - $ref: "./languages/productions/c.yml#/$defs/terminals"
+      - $ref: "./languages/productions/cpp.yml#/$defs/terminals"
+      - $ref: "./languages/productions/rust.yml#/$defs/terminals"
+      - $ref: "./languages/productions/java.yml#/$defs/terminals"
+      - $ref: "./languages/productions/ruby.yml#/$defs/terminals"
+      - $ref: "./languages/productions/bash.yml#/$defs/terminals"
+
+      # Data formats (productions/)
+      - $ref: "./languages/productions/json.yml#/$defs/terminals"
+      - $ref: "./languages/productions/yaml.yml#/$defs/terminals"
+      - $ref: "./languages/productions/toml.yml#/$defs/terminals"
+      - $ref: "./languages/productions/markdown.yml#/$defs/terminals"
+
+      # Composed frameworks (compositions/)
+      - $ref: "./languages/compositions/svelte.yml#/$defs/terminals"
+      - $ref: "./languages/compositions/astro.yml#/$defs/terminals"
 
   # ---------------------------------------------------------------------------
   # limit
