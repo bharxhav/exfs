@@ -17,5 +17,9 @@ command_long_description:
   count: 1
 
 command:
-  type: exfs.go.functions
+  type: exfs.go.var
+  count: 1
+
+sub_commands:
+  type: exfs.go.function
   count: 1
