@@ -1,0 +1,91 @@
+# =============================================================================
+# File Schema
+# =============================================================================
+# This schema defines how to write exfs file specifications
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/file"
+title: "EXFS File Schema"
+description: "Defines how to write an exfs file definition"
+
+# -----------------------------------------------------------------------------
+# Root Structure
+# -----------------------------------------------------------------------------
+# A file is an object where:
+#   - Keys are names of your choice
+#   - Values are captures defining what code to match
+# -----------------------------------------------------------------------------
+
+type: object
+
+additionalProperties:
+  $ref: "#/$defs/capture"
+
+# -----------------------------------------------------------------------------
+# Definitions
+# -----------------------------------------------------------------------------
+
+$defs:
+  # ---------------------------------------------------------------------------
+  # Capture
+  # ---------------------------------------------------------------------------
+  # A capture rule that defines what code productions to match.
+  #
+  # Required:
+  #   type    - The terminal to match
+  #
+  # Optional:
+  #   limit   - Limit number of items (int or {min, max})
+  # ---------------------------------------------------------------------------
+  capture:
+    type: object
+
+    properties:
+      type:
+        $ref: "#/$defs/terminal"
+
+      limit:
+        $ref: "#/$defs/limit"
+
+    required:
+      - type
+
+  # ---------------------------------------------------------------------------
+  # Terminal
+  # ---------------------------------------------------------------------------
+  # A grammar terminal to capture.
+  # Must be one of the defined terminals from a language productions file.
+  #
+  # See languages/productions/*.yml for available terminals per language.
+  # ---------------------------------------------------------------------------
+  terminal:
+    oneOf:
+      - $ref: "./languages/productions/go.yml#/$defs/terminals"
+
+  # ---------------------------------------------------------------------------
+  # limit
+  # ---------------------------------------------------------------------------
+  # Limits how many items to capture. Can be:
+  #   - integer: exact max
+  #   - object: range with min and/or max
+  #
+  # Omit limit for unlimited.
+  # ---------------------------------------------------------------------------
+  limit:
+    oneOf:
+      - type: integer
+        minimum: 1
+        description: "Maximum number of items"
+
+      - type: object
+        properties:
+          min:
+            type: integer
+            minimum: 0
+            description: "Minimum number of items"
+          max:
+            type: integer
+            minimum: 1
+            description: "Maximum number of items"
+        additionalProperties: false
