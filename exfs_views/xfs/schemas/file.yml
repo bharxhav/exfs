@@ -36,7 +36,8 @@ $defs:
   #   type    - The terminal to match
   #
   # Optional:
-  #   limit   - Limit number of items (int or {min, max})
+  #   limit    - Limit number of items (int or {min, max})
+  #   contains - Nested captures (captures can contain captures)
   # ---------------------------------------------------------------------------
   capture:
     type: object
@@ -47,6 +48,12 @@ $defs:
 
       limit:
         $ref: "#/$defs/limit"
+
+      contains:
+        type: object
+        additionalProperties:
+          $ref: "#/$defs/capture"
+        description: "Nested captures within this capture"
 
     required:
       - type
@@ -87,7 +94,7 @@ $defs:
       - $ref: "./languages/compositions/astro.yml#/$defs/terminals"
 
   # ---------------------------------------------------------------------------
-  # limit
+  # Limit
   # ---------------------------------------------------------------------------
   # Limits how many items to capture. Can be:
   #   - integer: exact max
