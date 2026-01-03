@@ -1,0 +1,69 @@
+# =============================================================================
+# Rust Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/rs"
+title: "Rust Productions"
+description: "Production capture rules for Rust source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments    # // comment or /* block */
+  - docs        # /// doc comment or //! inner doc
+  - uses        # use std::io;
+  - strings     # "hello" or r#"raw"#
+  - variables   # let x = 1; or let mut x = 1;
+  - constants   # const X: i32 = 1;
+  - statics     # static X: i32 = 1;
+  - macros      # println!() or macro_rules!
+  - attributes  # #[derive(Debug)] or #![allow()]
+  - types       # type Foo = Bar;
+  - mods        # mod foo { }
+  - functions   # fn foo() {}
+  - structs     # struct Foo {}
+  - enums       # enum Foo { A, B }
+  - traits      # trait Foo {}
+  - impls       # impl Foo for Bar {}
+  - closures    # |x| x + 1 or move |x| x
+  - calls       # foo()
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.rs.comments
+      - exfs.rs.docs
+      - exfs.rs.uses
+      - exfs.rs.strings
+      - exfs.rs.variables
+      - exfs.rs.constants
+      - exfs.rs.statics
+      - exfs.rs.macros
+      - exfs.rs.attributes
+      - exfs.rs.types
+      - exfs.rs.mods
+      - exfs.rs.functions
+      - exfs.rs.structs
+      - exfs.rs.enums
+      - exfs.rs.traits
+      - exfs.rs.impls
+      - exfs.rs.closures
+      - exfs.rs.calls
+
+      # Modifiers
+      - exfs.rs.variablesWithConstants
+      - exfs.rs.functionsWithAsync
+      - exfs.rs.functionsWithPrivate
+      - exfs.rs.functionsWithDecorators
+      - exfs.rs.functionsWithGenerics
+      - exfs.rs.structsWithPrivate
+      - exfs.rs.structsWithDecorators
+      - exfs.rs.structsWithGenerics

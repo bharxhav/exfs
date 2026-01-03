@@ -1,0 +1,70 @@
+# =============================================================================
+# Swift Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/swift"
+title: "Swift Productions"
+description: "Production capture rules for Swift source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments     # // single or /* block */ or /// doc
+  - imports      # import Foundation
+  - strings      # "hello" or """multiline"""
+  - variables    # var x = 1
+  - constants    # let x = 1
+  - typealiases  # typealias Foo = Bar
+  - guards       # guard x else { return }
+  - functions    # func foo() { }
+  - classes      # class Foo { }
+  - structs      # struct Foo { }
+  - enums        # enum Foo { case a, b }
+  - cases        # case .foo:
+  - protocols    # protocol Foo { }
+  - extensions   # extension Foo { }
+  - closures     # { x in x + 1 }
+  - inits        # init() { }
+  - deinits      # deinit { }
+  - calls        # foo() or obj.bar()
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.swift.comments
+      - exfs.swift.imports
+      - exfs.swift.strings
+      - exfs.swift.variables
+      - exfs.swift.constants
+      - exfs.swift.typealiases
+      - exfs.swift.guards
+      - exfs.swift.functions
+      - exfs.swift.classes
+      - exfs.swift.structs
+      - exfs.swift.enums
+      - exfs.swift.cases
+      - exfs.swift.protocols
+      - exfs.swift.extensions
+      - exfs.swift.closures
+      - exfs.swift.inits
+      - exfs.swift.deinits
+      - exfs.swift.calls
+
+      # Modifiers
+      - exfs.swift.variablesWithConstants
+      - exfs.swift.functionsWithAsync
+      - exfs.swift.functionsWithPrivate
+      - exfs.swift.functionsWithDecorators
+      - exfs.swift.functionsWithGenerics
+      - exfs.swift.classesWithPrivate
+      - exfs.swift.classesWithGenerics
+      - exfs.swift.structsWithPrivate
+      - exfs.swift.structsWithGenerics

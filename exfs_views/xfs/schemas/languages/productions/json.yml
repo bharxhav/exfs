@@ -1,0 +1,38 @@
+# =============================================================================
+# JSON Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/json"
+title: "JSON Productions"
+description: "Production capture rules for JSON files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - pairs     # "key": value
+  - keys      # "key" (just the key part)
+  - strings   # "hello"
+  - numbers   # 42 or 3.14 or -1e10
+  - booleans  # true or false
+  - nulls     # null
+  - objects   # { ... }
+  - arrays    # [ ... ]
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      - exfs.json.pairs
+      - exfs.json.keys
+      - exfs.json.strings
+      - exfs.json.numbers
+      - exfs.json.booleans
+      - exfs.json.nulls
+      - exfs.json.objects
+      - exfs.json.arrays

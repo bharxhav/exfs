@@ -1,0 +1,53 @@
+# =============================================================================
+# C Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/c"
+title: "C Productions"
+description: "Production capture rules for C source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments      # // single or /* block */
+  - includes      # #include <stdio.h> or #include "foo.h"
+  - defines       # #define FOO 1 or #define MAX(a,b)
+  - macros        # FOO(x) macro invocations
+  - declarations  # int foo(int x); (forward decl)
+  - variables     # int x = 1;
+  - strings       # "hello"
+  - typedefs      # typedef int MyInt;
+  - functions     # int foo() { }
+  - calls         # foo()
+  - structs       # struct Foo { };
+  - unions        # union Foo { };
+  - enums         # enum Foo { A, B };
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.c.comments
+      - exfs.c.includes
+      - exfs.c.defines
+      - exfs.c.macros
+      - exfs.c.declarations
+      - exfs.c.variables
+      - exfs.c.strings
+      - exfs.c.typedefs
+      - exfs.c.functions
+      - exfs.c.calls
+      - exfs.c.structs
+      - exfs.c.unions
+      - exfs.c.enums
+
+      # Modifiers
+      - exfs.c.variablesWithConstants
+      - exfs.c.functionsWithStatic

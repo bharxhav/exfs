@@ -1,0 +1,42 @@
+# =============================================================================
+# YAML Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/yaml"
+title: "YAML Productions"
+description: "Production capture rules for YAML files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments   # # comment
+  - pairs      # key: value
+  - keys       # key (just the key part)
+  - strings    # "hello" or 'hello' or plain
+  - numbers    # 42 or 3.14
+  - anchors    # &anchor
+  - aliases    # *anchor
+  - documents  # --- (document separator)
+  - mappings   # key: value (nested objects)
+  - sequences  # - item (lists)
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      - exfs.yaml.comments
+      - exfs.yaml.pairs
+      - exfs.yaml.keys
+      - exfs.yaml.strings
+      - exfs.yaml.numbers
+      - exfs.yaml.anchors
+      - exfs.yaml.aliases
+      - exfs.yaml.documents
+      - exfs.yaml.mappings
+      - exfs.yaml.sequences

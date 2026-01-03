@@ -1,0 +1,60 @@
+# =============================================================================
+# Java Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/java"
+title: "Java Productions"
+description: "Production capture rules for Java source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments      # // single or /* block */ or /** javadoc */
+  - packages      # package com.foo;
+  - imports       # import java.util.*;
+  - strings       # "hello"
+  - fields        # private int x = 1; (class member)
+  - variables     # int x = 1; (local)
+  - annotations   # @Override or @Autowired
+  - classes       # class Foo { }
+  - interfaces    # interface Foo { }
+  - enums         # enum Foo { A, B }
+  - methods       # void foo() { }
+  - constructors  # Foo() { }
+  - lambdas       # (x) -> x + 1
+  - calls         # foo() or obj.bar()
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.java.comments
+      - exfs.java.packages
+      - exfs.java.imports
+      - exfs.java.strings
+      - exfs.java.fields
+      - exfs.java.variables
+      - exfs.java.annotations
+      - exfs.java.classes
+      - exfs.java.interfaces
+      - exfs.java.enums
+      - exfs.java.methods
+      - exfs.java.constructors
+      - exfs.java.lambdas
+      - exfs.java.calls
+
+      # Modifiers
+      - exfs.java.fieldsWithConstants
+      - exfs.java.methodsWithPrivate
+      - exfs.java.methodsWithDecorators
+      - exfs.java.methodsWithGenerics
+      - exfs.java.classesWithPrivate
+      - exfs.java.classesWithDecorators
+      - exfs.java.classesWithGenerics

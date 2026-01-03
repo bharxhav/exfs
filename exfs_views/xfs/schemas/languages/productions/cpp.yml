@@ -1,0 +1,62 @@
+# =============================================================================
+# C++ Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/cpp"
+title: "C++ Productions"
+description: "Production capture rules for C++ source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments    # // single or /* block */
+  - includes    # #include <iostream> or #include "foo.h"
+  - defines     # #define FOO 1
+  - macros      # FOO(x) macro invocations
+  - variables   # int x = 1; or auto x = 1;
+  - strings     # "hello" or R"(raw)"
+  - typedefs    # typedef int MyInt;
+  - usings      # using namespace std; or using Foo = Bar;
+  - functions   # int foo() { }
+  - classes     # class Foo { };
+  - structs     # struct Foo { };
+  - namespaces  # namespace foo { }
+  - templates   # template<typename T> ...
+  - lambdas     # [](int x) { return x; }
+  - enums       # enum Foo { }; or enum class Foo { };
+  - calls       # foo() or obj.bar()
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.cpp.comments
+      - exfs.cpp.includes
+      - exfs.cpp.defines
+      - exfs.cpp.macros
+      - exfs.cpp.variables
+      - exfs.cpp.strings
+      - exfs.cpp.typedefs
+      - exfs.cpp.usings
+      - exfs.cpp.functions
+      - exfs.cpp.classes
+      - exfs.cpp.structs
+      - exfs.cpp.namespaces
+      - exfs.cpp.templates
+      - exfs.cpp.lambdas
+      - exfs.cpp.enums
+      - exfs.cpp.calls
+
+      # Modifiers
+      - exfs.cpp.variablesWithConstants
+      - exfs.cpp.functionsWithPrivate
+      - exfs.cpp.functionsWithGenerics
+      - exfs.cpp.classesWithPrivate
+      - exfs.cpp.classesWithGenerics

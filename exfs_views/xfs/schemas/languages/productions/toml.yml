@@ -1,0 +1,46 @@
+# =============================================================================
+# TOML Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/toml"
+title: "TOML Productions"
+description: "Production capture rules for TOML files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments         # # comment
+  - pairs            # key = value
+  - keys             # key or "key" or dotted.key
+  - strings          # "basic" or 'literal' or """multi"""
+  - numbers          # 42 or +99 or -17
+  - floats           # 3.14 or inf or nan
+  - booleans         # true or false
+  - dates            # 1979-05-27 or 1979-05-27T07:32:00Z
+  - tables           # [table] or [parent.child]
+  - arrays_of_tables # [[array.of.tables]]
+  - arrays           # [1, 2, 3]
+  - inline_tables    # { key = value, ... }
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      - exfs.toml.comments
+      - exfs.toml.pairs
+      - exfs.toml.keys
+      - exfs.toml.strings
+      - exfs.toml.numbers
+      - exfs.toml.floats
+      - exfs.toml.booleans
+      - exfs.toml.dates
+      - exfs.toml.tables
+      - exfs.toml.arrays_of_tables
+      - exfs.toml.arrays
+      - exfs.toml.inline_tables

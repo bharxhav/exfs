@@ -1,9 +1,6 @@
 # =============================================================================
 # Go Productions
 # =============================================================================
-# Defines how to capture Go language productions.
-# These are the concrete implementations of grammar terminals for Go.
-# =============================================================================
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://exfs.org/schemas/languages/productions/go"
@@ -15,62 +12,45 @@ description: "Production capture rules for Go source files"
 # -----------------------------------------------------------------------------
 
 productions:
-  comments:
-    type: exfs.go.comments
-    description: "Captures comments (// and /* */)"
-    output: text
-
-  imports:
-    type: exfs.go.imports
-    description: "Captures import statements"
-    output: list
-
-  functions:
-    type: exfs.go.functions
-    description: "Captures function definitions"
-    output: list
-
-  structs:
-    type: exfs.go.structs
-    description: "Captures struct definitions"
-    output: list
-
-  interfaces:
-    type: exfs.go.interfaces
-    description: "Captures interface definitions"
-    output: list
-
-  constants:
-    type: exfs.go.constants
-    description: "Captures const declarations"
-    output: list
-
-  variables:
-    type: exfs.go.variables
-    description: "Captures var declarations"
-    output: list
-
-  # Composite
-  declarations:
-    type: exfs.go.declarations
-    description: "Captures both const and var declarations"
-    output: list
-    includes:
-      - constants
-      - variables
+  - comments    # // single or /* block */
+  - imports     # import "fmt" or import (...)
+  - packages    # package main
+  - strings     # "hello" or `raw string`
+  - variables   # var x int = 1
+  - constants   # const x = 1
+  - types       # type Foo = Bar (alias)
+  - functions   # func foo() {}
+  - methods     # func (t T) foo() {}
+  - calls       # foo() or t.Method()
+  - structs     # type Foo struct {}
+  - interfaces  # type Foo interface {}
 
 # -----------------------------------------------------------------------------
-# For Validation
+# Terminals
 # -----------------------------------------------------------------------------
 
 $defs:
   terminals:
     enum:
+      # Base
       - exfs.go.comments
       - exfs.go.imports
+      - exfs.go.packages
+      - exfs.go.strings
+      - exfs.go.variables
+      - exfs.go.constants
+      - exfs.go.types
       - exfs.go.functions
+      - exfs.go.methods
+      - exfs.go.calls
       - exfs.go.structs
       - exfs.go.interfaces
-      - exfs.go.constants
-      - exfs.go.variables
-      - exfs.go.declarations
+
+      # Modifiers
+      - exfs.go.variablesWithConstants
+      - exfs.go.functionsWithPrivate
+      - exfs.go.functionsWithMethods
+      - exfs.go.functionsWithGenerics
+      - exfs.go.structsWithPrivate
+      - exfs.go.structsWithGenerics
+      - exfs.go.interfacesWithPrivate

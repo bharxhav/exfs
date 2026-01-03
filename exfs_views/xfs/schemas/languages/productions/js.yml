@@ -1,0 +1,50 @@
+# =============================================================================
+# JavaScript Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/js"
+title: "JavaScript Productions"
+description: "Production capture rules for JavaScript source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments   # // comment or /* block */
+  - imports    # import x from 'y'
+  - exports    # export { x } or export default
+  - strings    # "hello" or 'hello' or `template`
+  - variables  # let x = 1 or var x = 1
+  - constants  # const x = 1
+  - functions  # function foo() {}
+  - classes    # class Foo {}
+  - arrows     # (x) => x or () => {}
+  - calls      # foo()
+  - jsx        # <Component prop={x} />
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.js.comments
+      - exfs.js.imports
+      - exfs.js.exports
+      - exfs.js.strings
+      - exfs.js.variables
+      - exfs.js.constants
+      - exfs.js.functions
+      - exfs.js.classes
+      - exfs.js.arrows
+      - exfs.js.calls
+      - exfs.js.jsx
+
+      # Modifiers
+      - exfs.js.variablesWithConstants
+      - exfs.js.functionsWithAsync
+      - exfs.js.exportsWithPrivate

@@ -1,0 +1,55 @@
+# =============================================================================
+# Python Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/py"
+title: "Python Productions"
+description: "Production capture rules for Python source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments      # # comment
+  - imports       # import x or from x import y
+  - strings       # "hello" or 'hello' or """multi"""
+  - variables     # x = 1
+  - decorators    # @decorator
+  - docstrings    # """First line of func/class"""
+  - functions     # def foo():
+  - lambdas       # lambda x: x + 1
+  - classes       # class Foo:
+  - calls         # foo()
+  - generators    # yield x
+  - withs         # with open(f) as x:
+  - comprehensions # [x for x in xs], {k:v for...}, {x for...}
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.py.comments
+      - exfs.py.imports
+      - exfs.py.strings
+      - exfs.py.variables
+      - exfs.py.decorators
+      - exfs.py.docstrings
+      - exfs.py.functions
+      - exfs.py.lambdas
+      - exfs.py.classes
+      - exfs.py.calls
+      - exfs.py.generators
+      - exfs.py.withs
+      - exfs.py.comprehensions
+
+      # Modifiers
+      - exfs.py.commentsWithStrings
+      - exfs.py.functionsWithAsync
+      - exfs.py.functionsWithDecorators
+      - exfs.py.functionsWithMethods

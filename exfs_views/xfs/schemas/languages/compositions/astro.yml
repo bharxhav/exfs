@@ -1,0 +1,89 @@
+# =============================================================================
+# Astro Productions
+# =============================================================================
+# Astro components compose HTML, CSS, JS/TS with a frontmatter section.
+#
+# A .astro file has:
+#   ---          → Frontmatter (JS/TS)
+#   ---
+#   <style>      → CSS terminals
+#   <script>     → Client JS
+#   (template)   → HTML + JSX-like expressions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/compositions/astro"
+title: "Astro Productions"
+description: "Production capture rules for Astro components"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  # Sections
+  - frontmatter
+  - script
+  - style
+
+  # JS/TS (composed from ts.yml)
+  - imports
+  - functions
+  - variables
+  - constants
+  - arrows
+  - calls
+
+  # CSS (composed from css.yml)
+  - rules
+  - selectors
+  - properties
+  - media
+
+  # HTML (composed from html.yml)
+  - elements
+  - attributes
+  - text
+
+  # Astro-specific
+  - comments
+  - expressions
+  - components
+  - slots
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Sections
+      - exfs.astro.frontmatter
+      - exfs.astro.script
+      - exfs.astro.style
+
+      # JS/TS (composed)
+      - exfs.astro.imports
+      - exfs.astro.functions
+      - exfs.astro.variables
+      - exfs.astro.constants
+      - exfs.astro.arrows
+      - exfs.astro.calls
+
+      # CSS (composed)
+      - exfs.astro.rules
+      - exfs.astro.selectors
+      - exfs.astro.properties
+      - exfs.astro.media
+
+      # HTML (composed)
+      - exfs.astro.elements
+      - exfs.astro.attributes
+      - exfs.astro.text
+
+      # Astro-specific
+      - exfs.astro.comments
+      - exfs.astro.expressions
+      - exfs.astro.components
+      - exfs.astro.slots

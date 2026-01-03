@@ -70,7 +70,7 @@ $defs:
     oneOf:
       # Core languages (productions/)
       - $ref: "./languages/productions/go.yml#/$defs/terminals"
-      - $ref: "./languages/productions/python.yml#/$defs/terminals"
+      - $ref: "./languages/productions/py.yml#/$defs/terminals"
       - $ref: "./languages/productions/js.yml#/$defs/terminals"
       - $ref: "./languages/productions/ts.yml#/$defs/terminals"
       - $ref: "./languages/productions/html.yml#/$defs/terminals"
@@ -78,16 +78,16 @@ $defs:
       - $ref: "./languages/productions/swift.yml#/$defs/terminals"
       - $ref: "./languages/productions/c.yml#/$defs/terminals"
       - $ref: "./languages/productions/cpp.yml#/$defs/terminals"
-      - $ref: "./languages/productions/rust.yml#/$defs/terminals"
+      - $ref: "./languages/productions/rs.yml#/$defs/terminals"
       - $ref: "./languages/productions/java.yml#/$defs/terminals"
-      - $ref: "./languages/productions/ruby.yml#/$defs/terminals"
-      - $ref: "./languages/productions/bash.yml#/$defs/terminals"
+      - $ref: "./languages/productions/rb.yml#/$defs/terminals"
+      - $ref: "./languages/productions/sh.yml#/$defs/terminals"
 
       # Data formats (productions/)
       - $ref: "./languages/productions/json.yml#/$defs/terminals"
       - $ref: "./languages/productions/yaml.yml#/$defs/terminals"
       - $ref: "./languages/productions/toml.yml#/$defs/terminals"
-      - $ref: "./languages/productions/markdown.yml#/$defs/terminals"
+      - $ref: "./languages/productions/md.yml#/$defs/terminals"
 
       # Composed frameworks (compositions/)
       - $ref: "./languages/compositions/svelte.yml#/$defs/terminals"

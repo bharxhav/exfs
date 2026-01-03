@@ -1,0 +1,50 @@
+# =============================================================================
+# Shell Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/sh"
+title: "Shell Productions"
+description: "Production capture rules for Bash/Shell source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments      # # comment
+  - variables     # X=1 or local x=1
+  - exports       # export X=1
+  - strings       # "hello" or 'hello'
+  - heredocs      # <<EOF ... EOF or <<'EOF'
+  - redirects     # > file or 2>&1 or >> append
+  - functions     # foo() { } or function foo { }
+  - commands      # ls -la or /usr/bin/foo
+  - pipelines     # cmd1 | cmd2 | cmd3
+  - conditionals  # if/then/else/fi or [[ ]]
+  - loops         # for/while/until ... done
+  - cases         # case $x in pattern) ;; esac
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.sh.comments
+      - exfs.sh.variables
+      - exfs.sh.exports
+      - exfs.sh.strings
+      - exfs.sh.heredocs
+      - exfs.sh.redirects
+      - exfs.sh.functions
+      - exfs.sh.commands
+      - exfs.sh.pipelines
+      - exfs.sh.conditionals
+      - exfs.sh.loops
+      - exfs.sh.cases
+
+      # Modifiers
+      - exfs.sh.variablesWithExported

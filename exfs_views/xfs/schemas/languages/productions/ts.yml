@@ -1,0 +1,58 @@
+# =============================================================================
+# TypeScript Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/ts"
+title: "TypeScript Productions"
+description: "Production capture rules for TypeScript source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments    # // comment or /* block */
+  - imports     # import x from 'y'
+  - exports     # export { x } or export default
+  - strings     # "hello" or 'hello' or `template`
+  - variables   # let x: number = 1
+  - constants   # const x: number = 1
+  - types       # type Foo = { x: number }
+  - functions   # function foo(): void {}
+  - classes     # class Foo {}
+  - interfaces  # interface Foo {}
+  - arrows      # (x: number) => x
+  - calls       # foo()
+  - jsx         # <Component prop={x} />
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.ts.comments
+      - exfs.ts.imports
+      - exfs.ts.exports
+      - exfs.ts.strings
+      - exfs.ts.variables
+      - exfs.ts.constants
+      - exfs.ts.types
+      - exfs.ts.functions
+      - exfs.ts.classes
+      - exfs.ts.interfaces
+      - exfs.ts.arrows
+      - exfs.ts.calls
+      - exfs.ts.jsx
+
+      # Modifiers
+      - exfs.ts.variablesWithConstants
+      - exfs.ts.functionsWithAsync
+      - exfs.ts.functionsWithDecorators
+      - exfs.ts.functionsWithGenerics
+      - exfs.ts.exportsWithPrivate
+      - exfs.ts.classesWithDecorators
+      - exfs.ts.classesWithGenerics

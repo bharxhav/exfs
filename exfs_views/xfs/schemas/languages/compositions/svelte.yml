@@ -1,0 +1,85 @@
+# =============================================================================
+# Svelte Productions
+# =============================================================================
+# Svelte components compose HTML, CSS, and JS/TS.
+#
+# A .svelte file has:
+#   <script>   → JS/TS terminals
+#   <style>    → CSS terminals
+#   (template) → HTML terminals
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/compositions/svelte"
+title: "Svelte Productions"
+description: "Production capture rules for Svelte components"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  # Sections
+  - script
+  - style
+
+  # JS (composed from js.yml)
+  - imports
+  - functions
+  - variables
+  - constants
+  - arrows
+  - calls
+
+  # CSS (composed from css.yml)
+  - rules
+  - selectors
+  - properties
+  - media
+
+  # HTML (composed from html.yml)
+  - elements
+  - attributes
+  - text
+
+  # Svelte-specific
+  - comments
+  - blocks
+  - each
+  - slots
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Sections
+      - exfs.svelte.script
+      - exfs.svelte.style
+
+      # JS (composed)
+      - exfs.svelte.imports
+      - exfs.svelte.functions
+      - exfs.svelte.variables
+      - exfs.svelte.constants
+      - exfs.svelte.arrows
+      - exfs.svelte.calls
+
+      # CSS (composed)
+      - exfs.svelte.rules
+      - exfs.svelte.selectors
+      - exfs.svelte.properties
+      - exfs.svelte.media
+
+      # HTML (composed)
+      - exfs.svelte.elements
+      - exfs.svelte.attributes
+      - exfs.svelte.text
+
+      # Svelte-specific
+      - exfs.svelte.comments
+      - exfs.svelte.blocks
+      - exfs.svelte.each
+      - exfs.svelte.slots

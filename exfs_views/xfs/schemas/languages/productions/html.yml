@@ -1,0 +1,34 @@
+# =============================================================================
+# HTML Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/html"
+title: "HTML Productions"
+description: "Production capture rules for HTML source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments    # <!-- comment -->
+  - text        # raw text content between tags
+  - attributes  # class="foo" or disabled
+  - scripts     # <script>...</script>
+  - styles      # <style>...</style>
+  - elements    # <div>...</div> or <img />
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      - exfs.html.comments
+      - exfs.html.text
+      - exfs.html.attributes
+      - exfs.html.scripts
+      - exfs.html.styles
+      - exfs.html.elements

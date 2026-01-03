@@ -1,0 +1,52 @@
+# =============================================================================
+# Markdown Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/md"
+title: "Markdown Productions"
+description: "Production capture rules for Markdown files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - headings        # # H1 or ## H2 or ### H3
+  - paragraphs      # plain text block
+  - code_blocks     # ```lang ... ``` or indented
+  - code_spans      # `inline code`
+  - links           # [text](url) or [text][ref]
+  - images          # ![alt](url)
+  - emphasis        # *italic* or _italic_
+  - strong          # **bold** or __bold__
+  - tables          # | col | col | with alignment
+  - thematic_breaks # --- or *** or ___
+  - frontmatter     # --- yaml --- at start
+  - sections        # heading + content until next heading
+  - lists           # - item or 1. item
+  - list_items      # individual - item
+  - blockquotes     # > quoted text
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      - exfs.md.headings
+      - exfs.md.paragraphs
+      - exfs.md.code_blocks
+      - exfs.md.code_spans
+      - exfs.md.links
+      - exfs.md.images
+      - exfs.md.emphasis
+      - exfs.md.strong
+      - exfs.md.tables
+      - exfs.md.thematic_breaks
+      - exfs.md.frontmatter
+      - exfs.md.sections
+      - exfs.md.lists
+      - exfs.md.list_items
+      - exfs.md.blockquotes

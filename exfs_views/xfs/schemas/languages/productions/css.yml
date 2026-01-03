@@ -1,0 +1,36 @@
+# =============================================================================
+# CSS Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/css"
+title: "CSS Productions"
+description: "Production capture rules for CSS source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments    # /* comment */
+  - imports     # @import url('...');
+  - selectors   # .class, #id, div, [attr]
+  - properties  # color: red; or margin: 0;
+  - variables   # --my-var: value;
+  - rules       # selector { property: value; }
+  - media       # @media (min-width: 768px) { }
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      - exfs.css.comments
+      - exfs.css.imports
+      - exfs.css.selectors
+      - exfs.css.properties
+      - exfs.css.variables
+      - exfs.css.rules
+      - exfs.css.media

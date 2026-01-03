@@ -1,0 +1,58 @@
+# =============================================================================
+# Ruby Productions
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/productions/rb"
+title: "Ruby Productions"
+description: "Production capture rules for Ruby source files"
+
+# -----------------------------------------------------------------------------
+# Productions
+# -----------------------------------------------------------------------------
+
+productions:
+  - comments    # # comment
+  - requires    # require 'foo' or require_relative
+  - strings     # "hello" or 'hello' or %q{} or heredoc
+  - symbols     # :foo or :"foo"
+  - variables   # x = 1 or @x or @@x
+  - constants   # FOO = 1 or Foo::BAR
+  - modules     # module Foo; end
+  - classes     # class Foo; end
+  - methods     # def foo; end
+  - singletons  # def self.foo; end
+  - calls       # foo() or obj.bar
+  - blocks      # { |x| x } or do |x| ... end
+  - lambdas     # -> { } or lambda { }
+  - accessors   # attr_accessor :foo, attr_reader, attr_writer
+  - mixins      # include Foo or extend Bar
+
+# -----------------------------------------------------------------------------
+# Terminals
+# -----------------------------------------------------------------------------
+
+$defs:
+  terminals:
+    enum:
+      # Base
+      - exfs.rb.comments
+      - exfs.rb.requires
+      - exfs.rb.strings
+      - exfs.rb.symbols
+      - exfs.rb.variables
+      - exfs.rb.constants
+      - exfs.rb.modules
+      - exfs.rb.classes
+      - exfs.rb.methods
+      - exfs.rb.singletons
+      - exfs.rb.calls
+      - exfs.rb.blocks
+      - exfs.rb.lambdas
+      - exfs.rb.accessors
+      - exfs.rb.mixins
+
+      # Modifiers
+      - exfs.rb.commentsWithStrings
+      - exfs.rb.variablesWithConstants
+      - exfs.rb.methodsWithPrivate
