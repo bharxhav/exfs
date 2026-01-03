@@ -1,0 +1,85 @@
+# =============================================================================
+# Common Terminals
+# =============================================================================
+# Reference for universal terminals shared across programming languages.
+# Language-specific productions extend these with their own terminals.
+#
+# Nesting is defined at capture level, not here.
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/languages/common"
+title: "Common Terminals"
+description: "Reference for universal terminals across languages"
+
+# -----------------------------------------------------------------------------
+# Universal Terminals
+# -----------------------------------------------------------------------------
+# These exist in most languages. Productions may rename them
+# (e.g., "requires" in Ruby, "uses" in Rust, "includes" in C).
+# -----------------------------------------------------------------------------
+
+terminals:
+  comments:
+    description: "Code comments (// or /* */ or #)"
+    output: text
+
+  imports:
+    description: "Import/include/require statements"
+    output: list
+
+  functions:
+    description: "Function/method definitions"
+    output: list
+
+  variables:
+    description: "Variable declarations"
+    output: list
+
+  constants:
+    description: "Constant declarations (where language distinguishes)"
+    output: list
+
+  strings:
+    description: "String literals"
+    output: list
+
+  calls:
+    description: "Function/method invocations"
+    output: list
+
+# -----------------------------------------------------------------------------
+# Common Modifiers
+# -----------------------------------------------------------------------------
+# These patterns appear across multiple languages.
+# See individual production files for language-specific modifiers.
+# -----------------------------------------------------------------------------
+
+modifiers:
+  WithConstants:
+    description: "Include constants with variables"
+    applies_to: [variables]
+
+  WithAsync:
+    description: "Filter to async functions only"
+    applies_to: [functions]
+
+  WithPrivate:
+    description: "Filter to private/unexported only"
+    applies_to: [functions, classes, structs]
+
+  WithDecorators:
+    description: "Include decorator/annotation info"
+    applies_to: [functions, classes]
+
+  WithGenerics:
+    description: "Filter to generic/template definitions"
+    applies_to: [functions, classes, structs]
+
+  WithStrings:
+    description: "Include docstrings with comments (Python, Ruby)"
+    applies_to: [comments]
+
+  WithMethods:
+    description: "Include methods with functions (Go)"
+    applies_to: [functions]
