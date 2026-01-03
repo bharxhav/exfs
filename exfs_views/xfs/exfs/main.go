@@ -9,11 +9,7 @@ package exfs
 import (
 	"github.com/spf13/cobra"
 
-	"xfs.exfs.org/exfs/check"
-	"xfs.exfs.org/exfs/commit"
 	initcmd "xfs.exfs.org/exfs/init"
-	"xfs.exfs.org/exfs/version"
-	"xfs.exfs.org/exfs/view"
 )
 
 var commandName = "exfs"
@@ -39,8 +35,4 @@ var Cmd = &cobra.Command{
 
 func init() {
 	Cmd.AddCommand(initcmd.Cmd)
-	Cmd.AddCommand(version.Cmd)
-	Cmd.AddCommand(check.Cmd)
-	Cmd.AddCommand(commit.Cmd)
-	Cmd.AddCommand(view.Cmd)
 }
