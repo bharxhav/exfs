@@ -16,8 +16,9 @@ myproject/
 ├── .git/                         ← (optional, exfs is git-agnostic)
 ├── exfs_views/                   ← (exfs jurisdiction)
 │   ├── .exfs/                    ← (root config, applies to all views)
-│   │   └── exec/
-│   │       └── go_to_md.yml
+│   │
+│   ├── my_execs/                 ← (my_execs view)
+│   │   └── go_to_md.yml
 │   │
 │   ├── api/                      ← (api view)
 │   │   ├── .exfs/
@@ -47,6 +48,73 @@ myproject/
 ├── src/                          ← (outside jurisdiction)
 └── README.md
 ```
+
+### Source Files
+
+All source files can be referenced inside configuration files using `exfs.view.<path_from_view>.<your_file.ext>`. Which essentially makes all exfs files first class citizens of an exfs codebase.
+
+### Configuration Files
+
+All recognized configurations are YAML files, and these files have rigid schemas as defined in [exfs.org/schemas/](https://exfs.org/schemas/).
+
+### Schemas
+
+#### File Schema
+
+These are configs in `.exfs/<ext>/<filename>.yml` that define **captures** for `<filename>.<ext>`. A capture is a named block of code extracted from a source file.
+
+```yaml
+# api/.exfs/go/handler.yml → captures for handler.go
+comments:
+  type: core.go.comments # what to capture
+  limit: 10 # how many (optional)
+```
+
+**Nesting** — captures can contain captures:
+
+```yaml
+# api/.exfs/go/handler.yml
+my_funcs:
+  type: core.go.functions
+  contains:
+    doc_strings:
+      type: core.go.comments
+    _:
+      type: core.go.calls
+```
+
+**Referencing** — captures are addressable via `exfs.<path_to_.exfs>.<ext>.<file_name>.<capture_name>`:
+
+```text
+server/
+├── .exfs/ts/router.yml        ← config applies to all router.ts below
+├── router.ts
+├── api/router.ts
+├── auth/router.ts
+└── auth/login/router.ts
+```
+
+**Sync** — links captures across views when folder structures match:
+
+```text
+server/                              docs/api_ref/
+├── .exfs/ts/router.yml              ├── .exfs/md/endpoint.yml
+├── router.ts                        ├── endpoint.md
+├── api/router.ts                    ├── api/endpoint.md
+├── auth/router.ts                   ├── auth/endpoint.md
+└── auth/login/router.ts             └── auth/login/endpoint.md
+```
+
+```yaml
+# server/.exfs/ts/router.yml         # docs/api_ref/.exfs/md/endpoint.yml
+funcs:                                content:
+  type: core.ts.functions               type: core.md.content
+  sync:                                 sync:
+    - path: exfs.docs.api_ref.md.endpoint.content
+      engine: core.transpiler.functions
+```
+
+Because subtrees match (`api/`, `auth/`, `auth/login/`), a single config syncs all corresponding files. This is the **repeating subproblem** — the same structural pattern appears at multiple levels. EXFS hinges on this natural property to provide self-referencing single source of truth.
 
 ## CLI's Expected Behavior
 
