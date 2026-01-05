@@ -1,7 +1,11 @@
 # =============================================================================
 # File Schema
 # =============================================================================
-# This schema defines how to write exfs file specifications
+# This schema defines how to write exfs file specifications.
+#
+# Namespaces:
+#   exfs.*           - User's everything (blobs, captures, exec definitions)
+#   core.*           - System-provided (terminals, transpilers)
 # =============================================================================
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
@@ -33,11 +37,12 @@ $defs:
   # A capture rule that defines what code productions to match.
   #
   # Required:
-  #   type    - The terminal to match
+  #   type     - The terminal to match (core.<lang>.<terminal>)
   #
   # Optional:
   #   limit    - Limit number of items (int or {min, max})
   #   contains - Nested captures (captures can contain captures)
+  #   sync     - Peer relationships for cross-view synchronization
   # ---------------------------------------------------------------------------
   capture:
     type: object
@@ -55,6 +60,9 @@ $defs:
           $ref: "#/$defs/capture"
         description: "Nested captures within this capture"
 
+      sync:
+        $ref: "./core/sync.yml#/$defs/sync"
+
     required:
       - type
 
@@ -62,9 +70,10 @@ $defs:
   # Terminal
   # ---------------------------------------------------------------------------
   # A grammar terminal to capture.
-  # Must be one of the defined terminals from a language productions file.
+  # Must be: core.<lang>.<terminal>
   #
   # See languages/productions/*.yml for available terminals per language.
+  # Cross-view operations are handled via the sync property, not type.
   # ---------------------------------------------------------------------------
   terminal:
     oneOf:
