@@ -4,8 +4,13 @@
 # This schema defines how to write exfs file specifications.
 #
 # Namespaces:
-#   exfs.*           - File traversal (captures in .exfs/ files)
+#   exfs.*           - File traversal (captures, engines)
 #   core.*           - System-provided (terminals, transpiler)
+#
+# Sync directionality:
+#   with: exfs.*     - Bidirectional (core.transpiler only)
+#   to:   exfs.*     - This capture pushes to peer
+#   from: exfs.*     - This capture pulls from peer
 # =============================================================================
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
@@ -61,7 +66,7 @@ $defs:
         description: "Nested captures within this capture"
 
       sync:
-        $ref: "./core/sync.yml#/$defs/sync"
+        $ref: "#/$defs/sync"
 
     required:
       - type
@@ -128,3 +133,94 @@ $defs:
             minimum: 1
             description: "Maximum number of items"
         additionalProperties: false
+
+  # ---------------------------------------------------------------------------
+  # Sync
+  # ---------------------------------------------------------------------------
+  # Peer relationships for cross-view synchronization.
+  # ---------------------------------------------------------------------------
+  sync:
+    type: array
+    items:
+      $ref: "#/$defs/sync_entry"
+    minItems: 1
+
+  # ---------------------------------------------------------------------------
+  # Sync Entry
+  # ---------------------------------------------------------------------------
+  # Defines relationship with a single peer capture.
+  #
+  # Use exactly ONE of:
+  #   with - Bidirectional sync (core.transpiler only)
+  #   to   - This capture pushes to peer (unidirectional)
+  #   from - This capture pulls from peer (unidirectional)
+  #
+  # Optional:
+  #   engine - Transform engine (default: core.transpiler)
+  #            Custom engines (exfs.*) require 'to' or 'from', not 'with'
+  # ---------------------------------------------------------------------------
+  sync_entry:
+    type: object
+    properties:
+      with:
+        type: string
+        pattern: "^exfs\\."
+        description: |
+          Bidirectional peer capture.
+          Uses core.transpiler. Cannot use custom engine.
+
+      to:
+        type: string
+        pattern: "^exfs\\."
+        description: |
+          Peer capture to push to.
+          This capture → peer (unidirectional).
+
+      from:
+        type: string
+        pattern: "^exfs\\."
+        description: |
+          Peer capture to pull from.
+          Peer → this capture (unidirectional).
+
+      engine:
+        type: string
+        pattern: "^(core\\.transpiler|exfs\\.)"
+        description: |
+          Transform engine reference.
+          - core.transpiler: Built-in bidirectional (default)
+          - exfs.<path>: Custom engine yaml
+
+    additionalProperties: false
+
+    # -------------------------------------------------------------------------
+    # Validation: Exactly one of with/to/from required
+    # -------------------------------------------------------------------------
+    oneOf:
+      # Option 1: Bidirectional with 'with'
+      - required: [with]
+        not:
+          anyOf:
+            - required: [to]
+            - required: [from]
+        # 'with' cannot use custom engine
+        if:
+          required: [engine]
+        then:
+          properties:
+            engine:
+              const: core.transpiler
+
+      # Option 2: Unidirectional with 'to'
+      - required: [to]
+        not:
+          anyOf:
+            - required: [with]
+            - required: [from]
+
+      # Option 3: Unidirectional with 'from'
+      - required: [from]
+        not:
+          anyOf:
+            - required: [with]
+            - required: [to]

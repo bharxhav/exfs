@@ -1,0 +1,124 @@
+# =============================================================================
+# Engine Schema
+# =============================================================================
+# Defines transform engines for capture synchronization.
+# Engines are free-roaming yaml files (not in .exfs/) that specify how to
+# transform captures from one form to another.
+#
+# Namespaces:
+#   exfs.*              - File traversal (engine files, env files)
+#   core.transpiler     - Built-in bidirectional transpiler
+#
+# Usage:
+#   - core.transpiler is bidirectional (infers transform from capture types)
+#   - Custom engines (exfs.*) are unidirectional (require direction in sync)
+# =============================================================================
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://exfs.org/schemas/engine"
+title: "Engine Schema"
+description: "Transform engine definition for capture synchronization"
+
+type: object
+
+properties:
+  engine:
+    $ref: "#/$defs/engine"
+
+required:
+  - engine
+
+$defs:
+  # ---------------------------------------------------------------------------
+  # Engine
+  # ---------------------------------------------------------------------------
+  # The root engine definition.
+  #
+  # Required:
+  #   name    - Identifier for the engine
+  #   steps   - Execution steps (build, run, etc.)
+  #
+  # Optional:
+  #   version - Semantic version
+  #   image   - Container image for execution
+  #   env     - Environment variables
+  # ---------------------------------------------------------------------------
+  engine:
+    type: object
+    required:
+      - name
+      - steps
+    properties:
+      name:
+        type: string
+        pattern: "^[a-z][a-z0-9_]*$"
+        description: "Engine identifier (lowercase, underscores allowed)"
+
+      version:
+        type: string
+        pattern: "^\\d+\\.\\d+(\\.\\d+)?$"
+        description: "Semantic version (e.g., 1.0, 1.0.0)"
+
+      image:
+        type: string
+        description: |
+          Container image for execution (e.g., golang:1.22-alpine).
+          Omit for native execution.
+
+      env:
+        $ref: "#/$defs/env"
+
+      steps:
+        $ref: "#/$defs/steps"
+
+    additionalProperties: false
+
+  # ---------------------------------------------------------------------------
+  # Environment
+  # ---------------------------------------------------------------------------
+  # Environment variables for engine execution.
+  # Can be literal values or references to exfs files.
+  # ---------------------------------------------------------------------------
+  env:
+    type: array
+    items:
+      type: string
+      description: |
+        Environment variable. Can be:
+          - Literal: "KEY=value"
+          - Reference: "exfs.my_view.config.env" (loads from file)
+    description: "Environment variables (literals or exfs file references)"
+
+  # ---------------------------------------------------------------------------
+  # Steps
+  # ---------------------------------------------------------------------------
+  # Ordered execution steps. Last step receives stdin, emits stdout.
+  #
+  # Each step has:
+  #   name (optional) - Description of the step
+  #   run  (required) - Command to execute
+  # ---------------------------------------------------------------------------
+  steps:
+    type: array
+    items:
+      $ref: "#/$defs/step"
+    minItems: 1
+    description: |
+      Ordered execution steps.
+      Last step receives capture content via stdin.
+      Last step emits transformed content via stdout.
+
+  step:
+    type: object
+    required:
+      - run
+    properties:
+      name:
+        type: string
+        description: "Step description (for logging/debugging)"
+
+      run:
+        type: string
+        description: "Command to execute"
+
+    additionalProperties: false
