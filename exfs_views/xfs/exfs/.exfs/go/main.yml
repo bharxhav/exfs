@@ -1,25 +1,25 @@
 command_intent:
-  type: exfs.go.comments
+  type: core.go.comments
 
 imports:
-  type: exfs.go.imports
+  type: core.go.imports
 
 command_name:
-  type: exfs.go.variables
+  type: core.go.variables
   limit: 1
 
 command_short_description:
-  type: exfs.go.variables
+  type: core.go.variables
   limit: 1
 
 command_long_description:
-  type: exfs.go.variables
+  type: core.go.variables
   limit: 1
 
 command:
-  type: exfs.go.variables
+  type: core.go.variables
   limit: 1
 
 sub_commands:
-  type: exfs.go.functions
+  type: core.go.functions
   limit: 1

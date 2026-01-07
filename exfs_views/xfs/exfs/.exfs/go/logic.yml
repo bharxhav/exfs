@@ -1,8 +1,8 @@
 funcs_overview:
-  type: exfs.go.comments
+  type: core.go.comments
 
 imports:
-  type: exfs.go.imports
+  type: core.go.imports
 
 funcs:
-  type: exfs.go.functions
+  type: core.go.functions
