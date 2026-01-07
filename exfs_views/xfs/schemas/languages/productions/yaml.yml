@@ -30,13 +30,13 @@ productions:
 $defs:
   terminals:
     enum:
-      - exfs.yaml.comments
-      - exfs.yaml.pairs
-      - exfs.yaml.keys
-      - exfs.yaml.strings
-      - exfs.yaml.numbers
-      - exfs.yaml.anchors
-      - exfs.yaml.aliases
-      - exfs.yaml.documents
-      - exfs.yaml.mappings
-      - exfs.yaml.sequences
+      - core.yaml.comments
+      - core.yaml.pairs
+      - core.yaml.keys
+      - core.yaml.strings
+      - core.yaml.numbers
+      - core.yaml.anchors
+      - core.yaml.aliases
+      - core.yaml.documents
+      - core.yaml.mappings
+      - core.yaml.sequences
