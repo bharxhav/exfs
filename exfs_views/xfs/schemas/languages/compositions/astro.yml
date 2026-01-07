@@ -59,31 +59,31 @@ $defs:
   terminals:
     enum:
       # Sections
-      - exfs.astro.frontmatter
-      - exfs.astro.script
-      - exfs.astro.style
+      - core.astro.frontmatter
+      - core.astro.script
+      - core.astro.style
 
       # JS/TS (composed)
-      - exfs.astro.imports
-      - exfs.astro.functions
-      - exfs.astro.variables
-      - exfs.astro.constants
-      - exfs.astro.arrows
-      - exfs.astro.calls
+      - core.astro.imports
+      - core.astro.functions
+      - core.astro.variables
+      - core.astro.constants
+      - core.astro.arrows
+      - core.astro.calls
 
       # CSS (composed)
-      - exfs.astro.rules
-      - exfs.astro.selectors
-      - exfs.astro.properties
-      - exfs.astro.media
+      - core.astro.rules
+      - core.astro.selectors
+      - core.astro.properties
+      - core.astro.media
 
       # HTML (composed)
-      - exfs.astro.elements
-      - exfs.astro.attributes
-      - exfs.astro.text
+      - core.astro.elements
+      - core.astro.attributes
+      - core.astro.text
 
       # Astro-specific
-      - exfs.astro.comments
-      - exfs.astro.expressions
-      - exfs.astro.components
-      - exfs.astro.slots
+      - core.astro.comments
+      - core.astro.expressions
+      - core.astro.components
+      - core.astro.slots

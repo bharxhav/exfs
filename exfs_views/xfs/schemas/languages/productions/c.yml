@@ -34,20 +34,20 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.c.comments
-      - exfs.c.includes
-      - exfs.c.defines
-      - exfs.c.macros
-      - exfs.c.declarations
-      - exfs.c.variables
-      - exfs.c.strings
-      - exfs.c.typedefs
-      - exfs.c.functions
-      - exfs.c.calls
-      - exfs.c.structs
-      - exfs.c.unions
-      - exfs.c.enums
+      - core.c.comments
+      - core.c.includes
+      - core.c.defines
+      - core.c.macros
+      - core.c.declarations
+      - core.c.variables
+      - core.c.strings
+      - core.c.typedefs
+      - core.c.functions
+      - core.c.calls
+      - core.c.structs
+      - core.c.unions
+      - core.c.enums
 
       # Modifiers
-      - exfs.c.variablesWithConstants
-      - exfs.c.functionsWithStatic
+      - core.c.variablesWithConstants
+      - core.c.functionsWithStatic

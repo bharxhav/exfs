@@ -34,22 +34,22 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.py.comments
-      - exfs.py.imports
-      - exfs.py.strings
-      - exfs.py.variables
-      - exfs.py.decorators
-      - exfs.py.docstrings
-      - exfs.py.functions
-      - exfs.py.lambdas
-      - exfs.py.classes
-      - exfs.py.calls
-      - exfs.py.generators
-      - exfs.py.withs
-      - exfs.py.comprehensions
+      - core.py.comments
+      - core.py.imports
+      - core.py.strings
+      - core.py.variables
+      - core.py.decorators
+      - core.py.docstrings
+      - core.py.functions
+      - core.py.lambdas
+      - core.py.classes
+      - core.py.calls
+      - core.py.generators
+      - core.py.withs
+      - core.py.comprehensions
 
       # Modifiers
-      - exfs.py.commentsWithStrings
-      - exfs.py.functionsWithAsync
-      - exfs.py.functionsWithDecorators
-      - exfs.py.functionsWithMethods
+      - core.py.commentsWithStrings
+      - core.py.functionsWithAsync
+      - core.py.functionsWithDecorators
+      - core.py.functionsWithMethods

@@ -33,18 +33,18 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.sh.comments
-      - exfs.sh.variables
-      - exfs.sh.exports
-      - exfs.sh.strings
-      - exfs.sh.heredocs
-      - exfs.sh.redirects
-      - exfs.sh.functions
-      - exfs.sh.commands
-      - exfs.sh.pipelines
-      - exfs.sh.conditionals
-      - exfs.sh.loops
-      - exfs.sh.cases
+      - core.sh.comments
+      - core.sh.variables
+      - core.sh.exports
+      - core.sh.strings
+      - core.sh.heredocs
+      - core.sh.redirects
+      - core.sh.functions
+      - core.sh.commands
+      - core.sh.pipelines
+      - core.sh.conditionals
+      - core.sh.loops
+      - core.sh.cases
 
       # Modifiers
-      - exfs.sh.variablesWithExported
+      - core.sh.variablesWithExported

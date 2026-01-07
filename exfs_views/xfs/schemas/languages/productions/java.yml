@@ -35,26 +35,26 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.java.comments
-      - exfs.java.packages
-      - exfs.java.imports
-      - exfs.java.strings
-      - exfs.java.fields
-      - exfs.java.variables
-      - exfs.java.annotations
-      - exfs.java.classes
-      - exfs.java.interfaces
-      - exfs.java.enums
-      - exfs.java.methods
-      - exfs.java.constructors
-      - exfs.java.lambdas
-      - exfs.java.calls
+      - core.java.comments
+      - core.java.packages
+      - core.java.imports
+      - core.java.strings
+      - core.java.fields
+      - core.java.variables
+      - core.java.annotations
+      - core.java.classes
+      - core.java.interfaces
+      - core.java.enums
+      - core.java.methods
+      - core.java.constructors
+      - core.java.lambdas
+      - core.java.calls
 
       # Modifiers
-      - exfs.java.fieldsWithConstants
-      - exfs.java.methodsWithPrivate
-      - exfs.java.methodsWithDecorators
-      - exfs.java.methodsWithGenerics
-      - exfs.java.classesWithPrivate
-      - exfs.java.classesWithDecorators
-      - exfs.java.classesWithGenerics
+      - core.java.fieldsWithConstants
+      - core.java.methodsWithPrivate
+      - core.java.methodsWithDecorators
+      - core.java.methodsWithGenerics
+      - core.java.classesWithPrivate
+      - core.java.classesWithDecorators
+      - core.java.classesWithGenerics

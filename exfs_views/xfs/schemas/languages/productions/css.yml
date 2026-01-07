@@ -27,10 +27,10 @@ productions:
 $defs:
   terminals:
     enum:
-      - exfs.css.comments
-      - exfs.css.imports
-      - exfs.css.selectors
-      - exfs.css.properties
-      - exfs.css.variables
-      - exfs.css.rules
-      - exfs.css.media
+      - core.css.comments
+      - core.css.imports
+      - core.css.selectors
+      - core.css.properties
+      - core.css.variables
+      - core.css.rules
+      - core.css.media

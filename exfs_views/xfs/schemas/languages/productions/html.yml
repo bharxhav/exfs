@@ -26,9 +26,9 @@ productions:
 $defs:
   terminals:
     enum:
-      - exfs.html.comments
-      - exfs.html.text
-      - exfs.html.attributes
-      - exfs.html.scripts
-      - exfs.html.styles
-      - exfs.html.elements
+      - core.html.comments
+      - core.html.text
+      - core.html.attributes
+      - core.html.scripts
+      - core.html.styles
+      - core.html.elements

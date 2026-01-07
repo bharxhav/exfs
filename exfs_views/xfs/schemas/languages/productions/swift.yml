@@ -39,32 +39,32 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.swift.comments
-      - exfs.swift.imports
-      - exfs.swift.strings
-      - exfs.swift.variables
-      - exfs.swift.constants
-      - exfs.swift.typealiases
-      - exfs.swift.guards
-      - exfs.swift.functions
-      - exfs.swift.classes
-      - exfs.swift.structs
-      - exfs.swift.enums
-      - exfs.swift.cases
-      - exfs.swift.protocols
-      - exfs.swift.extensions
-      - exfs.swift.closures
-      - exfs.swift.inits
-      - exfs.swift.deinits
-      - exfs.swift.calls
+      - core.swift.comments
+      - core.swift.imports
+      - core.swift.strings
+      - core.swift.variables
+      - core.swift.constants
+      - core.swift.typealiases
+      - core.swift.guards
+      - core.swift.functions
+      - core.swift.classes
+      - core.swift.structs
+      - core.swift.enums
+      - core.swift.cases
+      - core.swift.protocols
+      - core.swift.extensions
+      - core.swift.closures
+      - core.swift.inits
+      - core.swift.deinits
+      - core.swift.calls
 
       # Modifiers
-      - exfs.swift.variablesWithConstants
-      - exfs.swift.functionsWithAsync
-      - exfs.swift.functionsWithPrivate
-      - exfs.swift.functionsWithDecorators
-      - exfs.swift.functionsWithGenerics
-      - exfs.swift.classesWithPrivate
-      - exfs.swift.classesWithGenerics
-      - exfs.swift.structsWithPrivate
-      - exfs.swift.structsWithGenerics
+      - core.swift.variablesWithConstants
+      - core.swift.functionsWithAsync
+      - core.swift.functionsWithPrivate
+      - core.swift.functionsWithDecorators
+      - core.swift.functionsWithGenerics
+      - core.swift.classesWithPrivate
+      - core.swift.classesWithGenerics
+      - core.swift.structsWithPrivate
+      - core.swift.structsWithGenerics

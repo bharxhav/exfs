@@ -36,23 +36,23 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.rb.comments
-      - exfs.rb.requires
-      - exfs.rb.strings
-      - exfs.rb.symbols
-      - exfs.rb.variables
-      - exfs.rb.constants
-      - exfs.rb.modules
-      - exfs.rb.classes
-      - exfs.rb.methods
-      - exfs.rb.singletons
-      - exfs.rb.calls
-      - exfs.rb.blocks
-      - exfs.rb.lambdas
-      - exfs.rb.accessors
-      - exfs.rb.mixins
+      - core.rb.comments
+      - core.rb.requires
+      - core.rb.strings
+      - core.rb.symbols
+      - core.rb.variables
+      - core.rb.constants
+      - core.rb.modules
+      - core.rb.classes
+      - core.rb.methods
+      - core.rb.singletons
+      - core.rb.calls
+      - core.rb.blocks
+      - core.rb.lambdas
+      - core.rb.accessors
+      - core.rb.mixins
 
       # Modifiers
-      - exfs.rb.commentsWithStrings
-      - exfs.rb.variablesWithConstants
-      - exfs.rb.methodsWithPrivate
+      - core.rb.commentsWithStrings
+      - core.rb.variablesWithConstants
+      - core.rb.methodsWithPrivate

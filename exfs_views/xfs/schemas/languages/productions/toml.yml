@@ -32,15 +32,15 @@ productions:
 $defs:
   terminals:
     enum:
-      - exfs.toml.comments
-      - exfs.toml.pairs
-      - exfs.toml.keys
-      - exfs.toml.strings
-      - exfs.toml.numbers
-      - exfs.toml.floats
-      - exfs.toml.booleans
-      - exfs.toml.dates
-      - exfs.toml.tables
-      - exfs.toml.arrays_of_tables
-      - exfs.toml.arrays
-      - exfs.toml.inline_tables
+      - core.toml.comments
+      - core.toml.pairs
+      - core.toml.keys
+      - core.toml.strings
+      - core.toml.numbers
+      - core.toml.floats
+      - core.toml.booleans
+      - core.toml.dates
+      - core.toml.tables
+      - core.toml.arrays_of_tables
+      - core.toml.arrays
+      - core.toml.inline_tables

@@ -28,11 +28,11 @@ productions:
 $defs:
   terminals:
     enum:
-      - exfs.json.pairs
-      - exfs.json.keys
-      - exfs.json.strings
-      - exfs.json.numbers
-      - exfs.json.booleans
-      - exfs.json.nulls
-      - exfs.json.objects
-      - exfs.json.arrays
+      - core.json.pairs
+      - core.json.keys
+      - core.json.strings
+      - core.json.numbers
+      - core.json.booleans
+      - core.json.nulls
+      - core.json.objects
+      - core.json.arrays

@@ -4,8 +4,8 @@
 # This schema defines how to write exfs file specifications.
 #
 # Namespaces:
-#   exfs.*           - User's everything (blobs, captures, exec definitions)
-#   core.*           - System-provided (terminals, transpilers)
+#   exfs.*           - File traversal (captures in .exfs/ files)
+#   core.*           - System-provided (terminals, transpiler)
 # =============================================================================
 
 $schema: "https://json-schema.org/draft/2020-12/schema"

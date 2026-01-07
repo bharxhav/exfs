@@ -34,25 +34,25 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.ts.comments
-      - exfs.ts.imports
-      - exfs.ts.exports
-      - exfs.ts.strings
-      - exfs.ts.variables
-      - exfs.ts.constants
-      - exfs.ts.types
-      - exfs.ts.functions
-      - exfs.ts.classes
-      - exfs.ts.interfaces
-      - exfs.ts.arrows
-      - exfs.ts.calls
-      - exfs.ts.jsx
+      - core.ts.comments
+      - core.ts.imports
+      - core.ts.exports
+      - core.ts.strings
+      - core.ts.variables
+      - core.ts.constants
+      - core.ts.types
+      - core.ts.functions
+      - core.ts.classes
+      - core.ts.interfaces
+      - core.ts.arrows
+      - core.ts.calls
+      - core.ts.jsx
 
       # Modifiers
-      - exfs.ts.variablesWithConstants
-      - exfs.ts.functionsWithAsync
-      - exfs.ts.functionsWithDecorators
-      - exfs.ts.functionsWithGenerics
-      - exfs.ts.exportsWithPrivate
-      - exfs.ts.classesWithDecorators
-      - exfs.ts.classesWithGenerics
+      - core.ts.variablesWithConstants
+      - core.ts.functionsWithAsync
+      - core.ts.functionsWithDecorators
+      - core.ts.functionsWithGenerics
+      - core.ts.exportsWithPrivate
+      - core.ts.classesWithDecorators
+      - core.ts.classesWithGenerics

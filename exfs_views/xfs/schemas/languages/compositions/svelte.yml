@@ -56,30 +56,30 @@ $defs:
   terminals:
     enum:
       # Sections
-      - exfs.svelte.script
-      - exfs.svelte.style
+      - core.svelte.script
+      - core.svelte.style
 
       # JS (composed)
-      - exfs.svelte.imports
-      - exfs.svelte.functions
-      - exfs.svelte.variables
-      - exfs.svelte.constants
-      - exfs.svelte.arrows
-      - exfs.svelte.calls
+      - core.svelte.imports
+      - core.svelte.functions
+      - core.svelte.variables
+      - core.svelte.constants
+      - core.svelte.arrows
+      - core.svelte.calls
 
       # CSS (composed)
-      - exfs.svelte.rules
-      - exfs.svelte.selectors
-      - exfs.svelte.properties
-      - exfs.svelte.media
+      - core.svelte.rules
+      - core.svelte.selectors
+      - core.svelte.properties
+      - core.svelte.media
 
       # HTML (composed)
-      - exfs.svelte.elements
-      - exfs.svelte.attributes
-      - exfs.svelte.text
+      - core.svelte.elements
+      - core.svelte.attributes
+      - core.svelte.text
 
       # Svelte-specific
-      - exfs.svelte.comments
-      - exfs.svelte.blocks
-      - exfs.svelte.each
-      - exfs.svelte.slots
+      - core.svelte.comments
+      - core.svelte.blocks
+      - core.svelte.each
+      - core.svelte.slots

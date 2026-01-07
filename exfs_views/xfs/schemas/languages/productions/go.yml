@@ -33,24 +33,24 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.go.comments
-      - exfs.go.imports
-      - exfs.go.packages
-      - exfs.go.strings
-      - exfs.go.variables
-      - exfs.go.constants
-      - exfs.go.types
-      - exfs.go.functions
-      - exfs.go.methods
-      - exfs.go.calls
-      - exfs.go.structs
-      - exfs.go.interfaces
+      - core.go.comments
+      - core.go.imports
+      - core.go.packages
+      - core.go.strings
+      - core.go.variables
+      - core.go.constants
+      - core.go.types
+      - core.go.functions
+      - core.go.methods
+      - core.go.calls
+      - core.go.structs
+      - core.go.interfaces
 
       # Modifiers
-      - exfs.go.variablesWithConstants
-      - exfs.go.functionsWithPrivate
-      - exfs.go.functionsWithMethods
-      - exfs.go.functionsWithGenerics
-      - exfs.go.structsWithPrivate
-      - exfs.go.structsWithGenerics
-      - exfs.go.interfacesWithPrivate
+      - core.go.variablesWithConstants
+      - core.go.functionsWithPrivate
+      - core.go.functionsWithMethods
+      - core.go.functionsWithGenerics
+      - core.go.structsWithPrivate
+      - core.go.structsWithGenerics
+      - core.go.interfacesWithPrivate

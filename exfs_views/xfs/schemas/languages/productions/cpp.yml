@@ -37,26 +37,26 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.cpp.comments
-      - exfs.cpp.includes
-      - exfs.cpp.defines
-      - exfs.cpp.macros
-      - exfs.cpp.variables
-      - exfs.cpp.strings
-      - exfs.cpp.typedefs
-      - exfs.cpp.usings
-      - exfs.cpp.functions
-      - exfs.cpp.classes
-      - exfs.cpp.structs
-      - exfs.cpp.namespaces
-      - exfs.cpp.templates
-      - exfs.cpp.lambdas
-      - exfs.cpp.enums
-      - exfs.cpp.calls
+      - core.cpp.comments
+      - core.cpp.includes
+      - core.cpp.defines
+      - core.cpp.macros
+      - core.cpp.variables
+      - core.cpp.strings
+      - core.cpp.typedefs
+      - core.cpp.usings
+      - core.cpp.functions
+      - core.cpp.classes
+      - core.cpp.structs
+      - core.cpp.namespaces
+      - core.cpp.templates
+      - core.cpp.lambdas
+      - core.cpp.enums
+      - core.cpp.calls
 
       # Modifiers
-      - exfs.cpp.variablesWithConstants
-      - exfs.cpp.functionsWithPrivate
-      - exfs.cpp.functionsWithGenerics
-      - exfs.cpp.classesWithPrivate
-      - exfs.cpp.classesWithGenerics
+      - core.cpp.variablesWithConstants
+      - core.cpp.functionsWithPrivate
+      - core.cpp.functionsWithGenerics
+      - core.cpp.classesWithPrivate
+      - core.cpp.classesWithGenerics

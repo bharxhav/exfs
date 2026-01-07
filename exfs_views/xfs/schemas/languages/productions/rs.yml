@@ -39,31 +39,31 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.rs.comments
-      - exfs.rs.docs
-      - exfs.rs.uses
-      - exfs.rs.strings
-      - exfs.rs.variables
-      - exfs.rs.constants
-      - exfs.rs.statics
-      - exfs.rs.macros
-      - exfs.rs.attributes
-      - exfs.rs.types
-      - exfs.rs.mods
-      - exfs.rs.functions
-      - exfs.rs.structs
-      - exfs.rs.enums
-      - exfs.rs.traits
-      - exfs.rs.impls
-      - exfs.rs.closures
-      - exfs.rs.calls
+      - core.rs.comments
+      - core.rs.docs
+      - core.rs.uses
+      - core.rs.strings
+      - core.rs.variables
+      - core.rs.constants
+      - core.rs.statics
+      - core.rs.macros
+      - core.rs.attributes
+      - core.rs.types
+      - core.rs.mods
+      - core.rs.functions
+      - core.rs.structs
+      - core.rs.enums
+      - core.rs.traits
+      - core.rs.impls
+      - core.rs.closures
+      - core.rs.calls
 
       # Modifiers
-      - exfs.rs.variablesWithConstants
-      - exfs.rs.functionsWithAsync
-      - exfs.rs.functionsWithPrivate
-      - exfs.rs.functionsWithDecorators
-      - exfs.rs.functionsWithGenerics
-      - exfs.rs.structsWithPrivate
-      - exfs.rs.structsWithDecorators
-      - exfs.rs.structsWithGenerics
+      - core.rs.variablesWithConstants
+      - core.rs.functionsWithAsync
+      - core.rs.functionsWithPrivate
+      - core.rs.functionsWithDecorators
+      - core.rs.functionsWithGenerics
+      - core.rs.structsWithPrivate
+      - core.rs.structsWithDecorators
+      - core.rs.structsWithGenerics

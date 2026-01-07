@@ -35,18 +35,18 @@ productions:
 $defs:
   terminals:
     enum:
-      - exfs.md.headings
-      - exfs.md.paragraphs
-      - exfs.md.code_blocks
-      - exfs.md.code_spans
-      - exfs.md.links
-      - exfs.md.images
-      - exfs.md.emphasis
-      - exfs.md.strong
-      - exfs.md.tables
-      - exfs.md.thematic_breaks
-      - exfs.md.frontmatter
-      - exfs.md.sections
-      - exfs.md.lists
-      - exfs.md.list_items
-      - exfs.md.blockquotes
+      - core.md.headings
+      - core.md.paragraphs
+      - core.md.code_blocks
+      - core.md.code_spans
+      - core.md.links
+      - core.md.images
+      - core.md.emphasis
+      - core.md.strong
+      - core.md.tables
+      - core.md.thematic_breaks
+      - core.md.frontmatter
+      - core.md.sections
+      - core.md.lists
+      - core.md.list_items
+      - core.md.blockquotes

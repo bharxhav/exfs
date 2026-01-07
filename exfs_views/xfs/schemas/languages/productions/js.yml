@@ -32,19 +32,19 @@ $defs:
   terminals:
     enum:
       # Base
-      - exfs.js.comments
-      - exfs.js.imports
-      - exfs.js.exports
-      - exfs.js.strings
-      - exfs.js.variables
-      - exfs.js.constants
-      - exfs.js.functions
-      - exfs.js.classes
-      - exfs.js.arrows
-      - exfs.js.calls
-      - exfs.js.jsx
+      - core.js.comments
+      - core.js.imports
+      - core.js.exports
+      - core.js.strings
+      - core.js.variables
+      - core.js.constants
+      - core.js.functions
+      - core.js.classes
+      - core.js.arrows
+      - core.js.calls
+      - core.js.jsx
 
       # Modifiers
-      - exfs.js.variablesWithConstants
-      - exfs.js.functionsWithAsync
-      - exfs.js.exportsWithPrivate
+      - core.js.variablesWithConstants
+      - core.js.functionsWithAsync
+      - core.js.exportsWithPrivate
