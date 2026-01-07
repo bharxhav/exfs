@@ -12,7 +12,7 @@ On initiating an EXFS repository, a "views" folder (`exfs_views/`) is created wh
 An exfs repository looks like this:
 
 ```text
-myproject/
+my_project/
 ├── .git/                         ← (optional, exfs is git-agnostic)
 ├── exfs_views/                   ← (exfs jurisdiction)
 │   ├── .exfs/                    ← (root config, applies to all views)
@@ -111,7 +111,6 @@ funcs:                                content:
   type: core.ts.functions               type: core.md.content
   sync:                                 sync:
     - path: exfs.docs.api_ref.md.endpoint.content
-      engine: core.transpiler.functions
 ```
 
 Because subtrees match (`api/`, `auth/`, `auth/login/`), a single config syncs all corresponding files. This is the **repeating subproblem** — the same structural pattern appears at multiple levels. EXFS hinges on this natural property to provide self-referencing single source of truth.
